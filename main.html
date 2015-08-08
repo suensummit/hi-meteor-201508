@@ -3,8 +3,12 @@
 </head>
 <body>
   <h2>{{testArray}}</h2>
+  <h2>testObject = {{testObject}}</h2>
+  <h2>testObject.test = {{testObject.test}}</h2>
+  <h2>testDate = {{testDate}}</h2>
   {{# each Msgs}}
     {{> message }}
+    <!-- {{> message number = this.n text = this.text}} -->
     <!-- <hr>
     <h2>Number: {{this.n}}</h2>
     <h2>Text: {{this.text}}</h2>

@@ -9,6 +9,10 @@ if (Meteor.isClient) {
   // body: for loop
   Template.body.helpers({
     testArray: _.range(0,10),
+    testObject: {
+      test : "test1233"
+    },
+    testDate : new Date,
     Msgs: [
       {n : 1, text : "gaaa"},
       {n : 2, text : "heee"},
