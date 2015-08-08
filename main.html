@@ -2,22 +2,16 @@
   <title>Hi! Meteor</title>
 </head>
 <body>
-    {{> m1}}
+    {{> message number = 1 text = "gaaa"}}
   <hr>
-    {{> m2}}
+    {{> message number = 2 text = "heee"}}
   <hr>
-    {{> m3}}
+    {{> message number = 3 text = "yaaa"}}
   <hr>
 </body>
 
-<template name="m1">
-  <h1>Hi! Meteor :)</h1>
-</template>
-
-<template name="m2">
-  <h1>Hi Hi! Meteor :))</h1>
-</template>
-
-<template name="m3">
-  <h1>Hi Hi Hi! Meteor :)))</h1>
+<template name="message">
+  <h3>{{number}}</h3>
+  <h1>{{text}}</h1>
+  <h3>by message</h3>
 </template>
