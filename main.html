@@ -4,11 +4,11 @@
 <body>
   <h2>{{testArray}}</h2>
   {{# each Msgs}}
-    <!-- {{> message text = this}} -->
-    <hr>
+    {{> message }}
+    <!-- <hr>
     <h2>Number: {{this.n}}</h2>
     <h2>Text: {{this.text}}</h2>
-    <hr>
+    <hr> -->
   {{/each}}
     <!-- {{> message number = 1 text = "gaaa"}}
   <hr>
@@ -20,9 +20,9 @@
 
 <template name="message">
   <hr>
-  <h2>NUMBER : {{number}}</h2>
+  <h2>NUMBER : {{n}}</h2>
   <h2>TEXT: {{text}}</h2>
-  <p>by messager</p>
+  <p>sent by messager</p>
   <h4>{{test}}</h4>
   <hr>
 </template>
