@@ -2,16 +2,25 @@
   <title>Hi! Meteor</title>
 </head>
 <body>
-    {{> message number = 1 text = "gaaa"}}
+  <h2>{{testArray}}</h2>
+  {{# each Msgs}}
+    {{> message text = this}}
+    <!-- <hr>
+    <h2>Text: {{this}}</h2> -->
+  {{/each}}
+    <!-- {{> message number = 1 text = "gaaa"}}
   <hr>
     {{> message number = 2 text = "heee"}}
   <hr>
     {{> message number = 3 text = "yaaa"}}
-  <hr>
+  <hr> -->
 </body>
 
 <template name="message">
-  <h3>{{number}}</h3>
-  <h1>{{text}}</h1>
-  <h3>by message</h3>
+  <hr>
+  <h2>NUMBER : {{number}}</h2>
+  <h2>TEXT: {{text}}</h2>
+  <p>by messager</p>
+  <h4>{{test}}</h4>
+  <hr>
 </template>
