@@ -4,9 +4,11 @@
 <body>
   <h2>{{testArray}}</h2>
   {{# each Msgs}}
-    {{> message text = this}}
-    <!-- <hr>
-    <h2>Text: {{this}}</h2> -->
+    <!-- {{> message text = this}} -->
+    <hr>
+    <h2>Number: {{this.n}}</h2>
+    <h2>Text: {{this.text}}</h2>
+    <hr>
   {{/each}}
     <!-- {{> message number = 1 text = "gaaa"}}
   <hr>
