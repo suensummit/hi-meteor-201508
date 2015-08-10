@@ -3,15 +3,15 @@
 </head>
 <body>
   {{# each Msgs}}
-
     {{> message number = this.n text = this.text}}
-
   {{/each}}
 </body>
 
 <template name="message">
   <hr>
-  <h2>NUMBER : {{number}}</h2>
+  {{# if number}}
+    <h2>NUMBER : {{number}}</h2>
+  {{/if}}
   <h2>TEXT: {{text}}</h2>
   <p>sent by messager</p>
   <h4>{{test}}</h4>
