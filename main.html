@@ -3,7 +3,7 @@
 </head>
 <body>
   {{# each Msgs}}
-    {{> message number = this.n text = this.text}}
+    {{> message number = this.n text = this.text from = this.from}}
   {{/each}}
 </body>
 
@@ -14,6 +14,8 @@
   {{/if}}
   <h2>TEXT: {{text}}</h2>
   <p>sent by messager</p>
-  <h4>{{test}}</h4>
+  {{# if from}}
+    <p>FROM : {{from}}</p>
+  {{/if}}
   <hr>
 </template>
