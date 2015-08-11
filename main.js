@@ -14,7 +14,10 @@ if (Meteor.isClient) {
   console.log("Client side");
   // body: for loop
   Template.body.helpers({
-    Msgs: sampleMessages
+    Msgs: function() {
+      return(Message.find())
+    }
+    // Msgs: sampleMessages
     // Msgs: [
     //   {n : 1, text : "gaaa"},
     //   {n : 2, text : "heee"},
