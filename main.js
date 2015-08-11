@@ -24,6 +24,19 @@ if (Meteor.isClient) {
     //   {n : 3, text : "yaaa"}
     // ]
   })
+  Template.body.events({
+    "change #inputMsg" : function(e, t){
+      // console.log("hello log");
+      // console.log($(e.target).val());
+      msg = $(e.target).val();
+      $(e.target).val("");
+      msgData = {
+        text : msg,
+        createdAt : new Date,
+      };
+      Message.insert(msgData);
+    }
+  })
 }
 
 // Server
