@@ -3,10 +3,15 @@
 </head>
 <body>
   <hr>
-  Message: <input id="inputMsg" />
+  <form>
+    User: <input id="inputUsr"/>
+    <br>
+    <br>
+    Message: <input id="inputMsg" />
+  </form>
   <hr>
   {{# each Msgs}}
-    {{> message number = this.n text = this.text from = this.from}}
+    {{> message number = this.n text = this.text from = this.from user = this.user}}
   {{/each}}
 </body>
 
@@ -14,6 +19,9 @@
   <hr>
   {{# if number}}
     <h2>NUMBER : {{number}}</h2>
+  {{/if}}
+  {{# if user}}
+    <h2>USER : {{user}}</h2>
   {{/if}}
   <h2>TEXT: {{text}}</h2>
   <p>sent by messager</p>
