@@ -12,16 +12,20 @@ if (Meteor.isClient) {
   Template.body.events({
     "change #inputMsg" : function(e, t){
       msg = $(e.target).val();
-      usr = $("#inputUsr").val();
-      if (!usr){
-        usr = "Anonymous"
-      }
+      // usr = $("#inputUsr").val();
+      // if (!usr){
+      //   usr = "Anonymous"
+      // }
       $("form > input").val("");
       msgData = {
-        user : usr,
         text : msg,
         createdAt : new Date,
       };
+      usr = Meteor.userId();
+      if (usr){
+        msgData.userId = usr;
+        msgData.user = Meteor.user().profile.name;
+      }
       Message.insert(msgData);
     }
   })
