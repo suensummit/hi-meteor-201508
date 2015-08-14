@@ -2,19 +2,18 @@
   <title>Hi! Meteor</title>
 </head>
 <body>
+  {{> guestBook}}
+</body>
+
+<template name="guestBook">
   {{> loginButtons}}
   <hr>
-  <form>
-    <!-- User: <input id="inputUsr"/> -->
-    <!-- <br> -->
-    <!-- <br> -->
-    Message: <input id="inputMsg" />
-  </form>
+  Message: <input id="inputMsg" />
   <hr>
   {{# each Msgs}}
     {{> message number = this.n text = this.text from = this.from user = this.user}}
   {{/each}}
-</body>
+</template>
 
 <template name="message">
   <hr>
