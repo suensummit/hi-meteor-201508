@@ -19,18 +19,23 @@ if (Meteor.isClient) {
       $("input").val("");
       msgData = {
         text : msg,
-        createdAt : new Date,
       };
-      usr = Meteor.userId();
-      if (usr){
-        msgData.userId = usr;
-        msgData.user = Meteor.user().profile.name;
-      }
-      Message.insert(msgData);
+      Meteor.call("createMessage", msgData)
     }
   })
 }
 
 // Server
 if (Meteor.isServer) {
+  Meteor.methods({
+    createMessage: function(msgData){
+      usr = Meteor.userId();
+      if (usr){
+        msgData.userId = usr;
+        msgData.user = Meteor.user().profile.name;
+        msgData.createdAt = new Date;
+      }
+      Message.insert(msgData);
+    }
+  })
 }
