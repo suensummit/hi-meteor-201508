@@ -19,6 +19,7 @@ if (Meteor.isClient) {
       $("input").val("");
       msgData = {
         text : msg,
+        createdAt : new Date,
       };
       Meteor.call("createMessage", msgData)
     }
@@ -33,7 +34,6 @@ if (Meteor.isServer) {
       if (usr){
         msgData.userId = usr;
         msgData.user = Meteor.user().profile.name;
-        msgData.createdAt = new Date;
       }
       Message.insert(msgData);
     }
